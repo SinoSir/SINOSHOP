@@ -3,10 +3,7 @@
 我们仅为以下版本提供安全更新。  
 请尽快升级到受支持的版本。
 版本	是否支持
-3.x	:white_check_mark: 支持
-2.x	:white_check_mark: 支持
-1.x	:x: 已停止支持
-< 1.0	:x: 已停止支持
+1.x	:white_check_mark: 支持
 报告漏洞 / Reporting a Vulnerability
 我们非常重视 SINOSHOP 的安全问题。  
 如果你发现了安全漏洞，请勿公开提交 Issue，而是通过以下加密渠道私下报告：
