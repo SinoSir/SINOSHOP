@@ -1,0 +1,26 @@
+{
+  "sinoshop_versions": {
+    "active": {
+      "version": "3.x",
+      "protocol_version": 2,
+      "upgrade_guide": "https://sinoshop.internal/docs/upgrade-v3"
+    },
+    "maintenance": [
+      {
+        "version": "2.x",
+        "protocol_version": 1,
+        "upgrade_guide": "https://sinoshop.internal/docs/upgrade-from-v2",
+        "minimum_firmware_signature": "2.1.0"
+      }
+    ],
+    "eol": [
+      {
+        "version": "1.x",
+        "protocol_version": 0,
+        "end_date": "2025-01-01",
+        "error_code_on_connect": "ERR_VERSION_EOL",
+        "message": "您的节点版本已终止生命周期，请升级到 2.x 或更高版本。"
+      }
+    ]
+  }
+}
