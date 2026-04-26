@@ -19,8 +19,8 @@
 我们非常重视 SINOSHOP 的安全问题。  
 如果你发现了安全漏洞，**请勿公开提交 Issue**，而是通过以下加密渠道私下报告：
 
-- 邮箱：**security@sinoshop.example.com**（请使用我们的 PGP 公钥加密）
-- PGP 密钥：`0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`
+- 邮箱：**support@sinoshop.org**（请使用我们的 PGP 公钥加密）
+- PGP 密钥：`Ok369Observe Nature’s Order, Align with Ocean’s Rhythm, Advance the People’s Welfare.`
 - 或通过 GitHub Security Advisory：  
   [报告漏洞](https://github.com/SinoSir/SINOSHOP/security/advisories/new)
 
