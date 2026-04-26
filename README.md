@@ -56,7 +56,21 @@ R16-SDK 是物理世界映射至数字世界的“基因序列”。
 - 所有针对核心协议（`core/` 目录）的重大迭代，必须经过 SINOSHOP 技术仲裁委员会审核。
 - 贡献者自动授予 SINOSHOP 体系在海洋工程领域内的永久免费使用权。
 
-## 5. 免责与主权声明
+5.## 治理 / Governance
+
+本项目遵循严格的版本生命周期与安全策略，所有治理文件位于 [governance/](governance/) 目录下，并已集成 CI/CD 自动合规检查。
+
+| 文件 | 用途 |
+|------|------|
+| [OPEN_SOURCE_PROTOCOL_V2.4.md](governance/OPEN_SOURCE_PROTOCOL_V2.4.md) | 开源协议总纲 |
+| [SECURITY.md](governance/SECURITY.md) | 安全漏洞报告与处理流程 |
+| [SUPPORT_POLICY.md](governance/SUPPORT_POLICY.md) | 版本生命周期承诺（LTS 模型） |
+| [VERSIONS.json](governance/VERSIONS.json) | 机器可读的版本状态（CI/CD 驱动） |
+
+> 所有 Pull Request 会自动验证目标分支的版本状态，向已终止生命周期 (EOL) 的分支提交代码将构建失败。
+
+完整的贡献指南见 [CONTRIBUTING.md](CONTRIBUTING.md)，许可证见 [LICENSE](LICENSE)。
+6.免责与主权声明
 本协议由 SINOSHOP-Core 治理委员会发布。对于未经认证、私自绕过 R16 探针接入网络所导致的任何物理损坏或数据灾难，本协议主体概不负责。
 
 ---
