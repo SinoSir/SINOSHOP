@@ -6,9 +6,10 @@
 
 | 版本 | 状态 | 支持类型 |
 | :--- | :--- | :--- |
-| 3.x | :white_check_mark: Active | 安全修复、功能更新、API 更新 |
-| 2.x | :warning: Maintenance | 仅安全修复 |
-| 1.x, <1.0 | :x: End-of-Life | 无官方支持 |
+| 0.3.x | :white_check_mark: Active | 安全修复、功能更新、API 更新 |
+
+> 🧪 SINOSHOP 目前处于早期开发阶段（0.3），所有 0.3.x 版本均享受全面支持。  
+> 正式版发布后，将引入 Maintenance 和 End-of-Life 梯队。
 
 > 详细的版本生命周期承诺、硬件兼容性要求及升级指南，请参阅 [SUPPORT_POLICY.md](SUPPORT_POLICY.md)。  
 > 机器可读的版本状态请参阅 [VERSIONS.json](VERSIONS.json)。
@@ -18,8 +19,8 @@
 我们非常重视 SINOSHOP 的安全问题。  
 如果你发现了安全漏洞，**请勿公开提交 Issue**，而是通过以下加密渠道私下报告：
 
-- 邮箱：**standards@sinoshop.org**（请使用我们的 PGP 公钥加密）
-- PGP 密钥：`Ok369:Observe Nature’s Order, Align with Ocean’s Rhythm, Advance the People’s Welfare.`
+- 邮箱：**security@sinoshop.example.com**（请使用我们的 PGP 公钥加密）
+- PGP 密钥：`0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`
 - 或通过 GitHub Security Advisory：  
   [报告漏洞](https://github.com/SinoSir/SINOSHOP/security/advisories/new)
 
@@ -54,8 +55,7 @@
 
 我们会向遵守本策略的漏洞报告者公开致谢（需征得本人同意）。  
 感谢你对 SINOSHOP 安全做出的贡献。
-Liang zhenxiong SINOSHOP
-liangzhenxiong@gmail.com
+
 ---
 
-*最后更新：2026-04-25*
+*最后更新：2026-04-26*
