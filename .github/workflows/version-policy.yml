@@ -4,9 +4,8 @@ on:
   pull_request:
     branches:
       - main
-      - 2.x
-      - 1.x
-      # 如有其他长期分支，在此添加
+      - 0.3.x
+  workflow_dispatch:   # 允许手动触发测试
 
 jobs:
   version-compliance:
