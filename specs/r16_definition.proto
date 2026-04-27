@@ -2,46 +2,40 @@ syntax = "proto3";
 
 package sinoshop.r16;
 
-// SINOSHOP R16 编码体系 - 核心定义
+// SINOSHOP R16 编码体系 - 核心定义 (V4.0.1)
 // 本文件是 SINOSHOP 开源生态的唯一协议标准，所有实现必须与此兼容。
+// 对应纲要：SINOSHOP-R16-V4.0.1
 
-// 全局唯一构件编码
+// 全局唯一构件编码（对应 32 位编码结构）
 message SinorEncodedComponent {
-  // 组织编码 (Organization) - 建设方或运营方的全局唯一标识
-  string org = 1;                 // 必填，长度 3-8 位大写字母数字组合
-  // 区段编码 (Segment) - 物理通道段/悬浮隧道段的唯一标识
-  string seg = 2;                 // 必填，如 "SFT-01"
-  // 区域编码 (Zone) - 段内的子区域或楼层
-  string zon = 3;                 // 可选，如 "A3"
-  // 构件类型编码 (Component Type)
-  ComponentType type = 4;         // 必填
-  // 实例编号 (Instance) - 同类型下的唯一编号
-  uint32 instance_id = 5;        // 必填
-  // 固件签名版本 (Firmware Signature Version)
-  string firmware_version = 6;   // 必填，如 "3.0.0"
-  // 哈希校验值 (Integrity Hash)
-  bytes integrity_hash = 7;      // 可选，用于验证数据完整性
-  // 扩展属性 (Extended Attributes)，JSON 格式
-  string ext_attributes = 8;     // 可选
+  string org = 1;                  // 机构标识 (ORG)，3-8 位大写字母数字
+  string seg = 2;                  // 节段编码 (SEG)，如 "SFT-01"
+  string zon = 3;                  // 结构分区 (ZON)，4 位大写字母
+  string com = 4;                  // 构件属性 (COM)，4 位字母数字
+  string att = 5;                  // 状态/金融属性 (ATT)，4 位字母数字
+  string chk = 6;                  // 校验位 (CHK)，2 位十六进制
+  string full_encoding = 7;        // 完整 32 位编码字符串
+  string firmware_version = 8;     // 固件签名版本
+  bytes integrity_hash = 9;        // 完整性哈希
+  string ext_attributes = 10;      // 扩展属性 (JSON)
 }
 
-// 构件类型枚举
-enum ComponentType {
+// 构件角色枚举（对应 ZON 字段）
+enum ComponentRole {
   UNSPECIFIED = 0;
-  SENSOR = 1;           // 传感器节点
-  ACTUATOR = 2;         // 执行器
-  CONTROLLER = 3;       // 控制器
-  COMMUNICATION = 4;    // 通信模块
-  POWER = 5;            // 能源模块
-  STRUCTURE = 6;        // 结构件
-  SAFETY = 7;           // 安全设备
-  OTHER = 8;            // 其他
+  AFMB = 1;          // 自浮式模块主体
+  FLEX = 2;          // 柔性约束节点
+  THRS = 3;          // 智能推力单元
+  SENS = 4;          // 位姿感知节点
+  BDMP = 5;          // 边界阻尼区
+  ENER = 6;          // 能源枢纽站
+  ECOL = 7;          // 生态模块
 }
 
 // R16 握手请求
 message HandshakeRequest {
   SinorEncodedComponent client_component = 1;
-  string protocol_version = 2;    // 协议版本，如 "3.0"
+  string protocol_version = 2;     // 协议版本，如 "4.0.1"
 }
 
 // R16 握手响应
@@ -49,8 +43,8 @@ message HandshakeResponse {
   string server_component_id = 1;
   string protocol_version = 2;
   HandshakeStatus status = 3;
-  string error_message = 4;       // 若状态为 REJECTED，此处包含原因
-  string upgrade_guide_url = 5;   // 若版本不匹配，提示升级链接
+  string error_message = 4;
+  string upgrade_guide_url = 5;
 }
 
 enum HandshakeStatus {
@@ -58,21 +52,21 @@ enum HandshakeStatus {
   REJECTED_VERSION_EOL = 1;
   REJECTED_FIRMWARE_MISMATCH = 2;
   REJECTED_UNAUTHORIZED = 3;
-  REJECTED_OTHER = 4;
+  REJECTED_INVALID_ENCODING = 4;   // 新增：编码格式校验失败
+  REJECTED_OTHER = 5;
 }
 
 // R16 遥测数据包
 message TelemetryPacket {
   SinorEncodedComponent component = 1;
-  uint64 timestamp = 2;           // Unix 时间戳（毫秒）
-  repeated Metric metrics = 3;    // 一组指标
-  string digital_signature = 4;   // 数字签名
+  uint64 timestamp = 2;
+  repeated Metric metrics = 3;
+  string digital_signature = 4;
 }
 
-// 遥测指标
 message Metric {
   string name = 1;
   double value = 2;
-  string unit = 3;                // 单位，如 "kPa", "°C"
-  uint64 timestamp = 4;           // 采集时间戳（毫秒）
+  string unit = 3;
+  uint64 timestamp = 4;
 }
