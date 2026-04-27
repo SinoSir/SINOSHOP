@@ -72,7 +72,18 @@ R16-SDK 是物理世界映射至数字世界的“基因序列”。
 完整的贡献指南见 [CONTRIBUTING.md](CONTRIBUTING.md)，许可证见 [LICENSE](LICENSE)。
 6.免责与主权声明
 本协议由 SINOSHOP-Core 治理委员会发布。对于未经认证、私自绕过 R16 探针接入网络所导致的任何物理损坏或数据灾难，本协议主体概不负责。
+## 📡 协议标准 (Specifications)
 
+R16 编码标准以机器可读格式维护，是 SINOSHOP 生态的唯一协议源头。
+
+| 文件 | 格式 | 用途 |
+|------|------|------|
+| [r16_definition.proto](specs/r16_definition.proto) | Protocol Buffers v3 | 核心数据结构定义 |
+| [r16_schema.json](specs/r16_schema.json) | JSON Schema | Web/Node.js 生态验证 |
+| [VERSION_MATRIX.md](governance/VERSION_MATRIX.md) | Markdown | 软硬件固件签名映射 |
+
+> 所有接入 SINOSHOP 的物理构件必须通过此编码身份认证。  
+> 接口定义在此，核心实现请查阅内部开发者文档。
 ---
 *“海洋工程的规则，由此定义。”*
 *Root: Liang Zhenxiong*
