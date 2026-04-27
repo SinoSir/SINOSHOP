@@ -29,6 +29,16 @@ jobs:
             "rwa_asset_confirmation"
             "core_algorithm_confidential"
             "L3-CONFIDENTIAL"
+            "动态权重算法"
+            "dynamic_weight_algorithm"
+            "权重系数"
+            "weight_coefficient"
+            "ZON_WEIGHT"
+            "zon_weight"
+            "ATT_FINANCIAL_MODEL"
+            "att_financial_model"
+            "虎符激活"
+            "tiger_activation"
           )
 
           # 获取 PR 的变更文件列表
