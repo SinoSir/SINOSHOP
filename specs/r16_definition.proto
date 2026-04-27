@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package sinoshop.r16;
+
+// SINOSHOP R16 编码体系 - 核心定义
+// 本文件是 SINOSHOP 开源生态的唯一协议标准，所有实现必须与此兼容。
+
+// 全局唯一构件编码
+message SinorEncodedComponent {
+  // 组织编码 (Organization) - 建设方或运营方的全局唯一标识
+  string org = 1;                 // 必填，长度 3-8 位大写字母数字组合
+  // 区段编码 (Segment) - 物理通道段/悬浮隧道段的唯一标识
+  string seg = 2;                 // 必填，如 "SFT-01"
+  // 区域编码 (Zone) - 段内的子区域或楼层
+  string zon = 3;                 // 可选，如 "A3"
+  // 构件类型编码 (Component Type)
+  ComponentType type = 4;         // 必填
+  // 实例编号 (Instance) - 同类型下的唯一编号
+  uint32 instance_id = 5;        // 必填
+  // 固件签名版本 (Firmware Signature Version)
+  string firmware_version = 6;   // 必填，如 "3.0.0"
+  // 哈希校验值 (Integrity Hash)
+  bytes integrity_hash = 7;      // 可选，用于验证数据完整性
+  // 扩展属性 (Extended Attributes)，JSON 格式
+  string ext_attributes = 8;     // 可选
+}
+
+// 构件类型枚举
+enum ComponentType {
+  UNSPECIFIED = 0;
+  SENSOR = 1;           // 传感器节点
+  ACTUATOR = 2;         // 执行器
+  CONTROLLER = 3;       // 控制器
+  COMMUNICATION = 4;    // 通信模块
+  POWER = 5;            // 能源模块
+  STRUCTURE = 6;        // 结构件
+  SAFETY = 7;           // 安全设备
+  OTHER = 8;            // 其他
+}
+
+// R16 握手请求
+message HandshakeRequest {
+  SinorEncodedComponent client_component = 1;
+  string protocol_version = 2;    // 协议版本，如 "3.0"
+}
+
+// R16 握手响应
+message HandshakeResponse {
+  string server_component_id = 1;
+  string protocol_version = 2;
+  HandshakeStatus status = 3;
+  string error_message = 4;       // 若状态为 REJECTED，此处包含原因
+  string upgrade_guide_url = 5;   // 若版本不匹配，提示升级链接
+}
+
+enum HandshakeStatus {
+  ACCEPTED = 0;
+  REJECTED_VERSION_EOL = 1;
+  REJECTED_FIRMWARE_MISMATCH = 2;
+  REJECTED_UNAUTHORIZED = 3;
+  REJECTED_OTHER = 4;
+}
+
+// R16 遥测数据包
+message TelemetryPacket {
+  SinorEncodedComponent component = 1;
+  uint64 timestamp = 2;           // Unix 时间戳（毫秒）
+  repeated Metric metrics = 3;    // 一组指标
+  string digital_signature = 4;   // 数字签名
+}
+
+// 遥测指标
+message Metric {
+  string name = 1;
+  double value = 2;
+  string unit = 3;                // 单位，如 "kPa", "°C"
+  uint64 timestamp = 4;           // 采集时间戳（毫秒）
+}
