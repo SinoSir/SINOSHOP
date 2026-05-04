@@ -55,8 +55,26 @@
 
 我们会向遵守本策略的漏洞报告者公开致谢（需征得本人同意）。  
 感谢你对 SINOSHOP 安全做出的贡献。
-Liangzhenxiong SINOSHOP 
-liangzhenxiong@gmail.com
+## 致谢 / Hall of Fame
+
+我们会向遵守本策略的漏洞报告者公开致谢（需征得本人同意）。
+感谢你对 SINOSHOP 安全做出的贡献。
+
 ---
 
-*最后更新：2026-04-26*
+**SINOSHOP：观天之道，执天之行，造福人民。**
+**海生电、电养桥、桥造城、城惠民。**
+**貞忠昭日月，惠民播春秋。**
+
+*Observe Nature's Order, Align with Ocean's Rhythm, Advance the People's Welfare.*
+*Ocean breeds energy, energy sustains the corridors, corridors build cities, and cities benefit the people.*
+*Steadfast Loyalty glowing like the sun and moon; Benevolence nourishing the tide of time.*
+
+*Root: Liang Zhenxiong*
+*SINOSHOP*
+*liangzhenxiong@gmail.com*
+
+---
+
+*本协议版本 V2.4，最后更新于 2026-04-26。*
+---
