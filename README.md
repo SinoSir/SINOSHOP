@@ -56,7 +56,7 @@ R16-SDK 是物理世界映射至数字世界的“基因序列”。
 - 所有针对核心协议（`core/` 目录）的重大迭代，必须经过 SINOSHOP 技术仲裁委员会审核。
 - 贡献者自动授予 SINOSHOP 体系在海洋工程领域内的永久免费使用权。
 
-5.## 治理 / Governance
+## 5. 治理 / Governance
 
 本项目遵循严格的版本生命周期与安全策略，所有治理文件位于 [governance/](governance/) 目录下，并已集成 CI/CD 自动合规检查。
 
@@ -69,9 +69,14 @@ R16-SDK 是物理世界映射至数字世界的“基因序列”。
 
 > 所有 Pull Request 会自动验证目标分支的版本状态，向已终止生命周期 (EOL) 的分支提交代码将构建失败。
 
+### 📜 治理历史档案 (Governance History)
+- [外部架构师评审记录](docs/governance-history/external-review-2026-05-04.md) — 首次外部独立评审通过（2026-05-04）
+
 完整的贡献指南见 [CONTRIBUTING.md](CONTRIBUTING.md)，许可证见 [LICENSE](LICENSE)。
-6.免责与主权声明
+
+## 6. 免责与主权声明
 本协议由 SINOSHOP-Core 治理委员会发布。对于未经认证、私自绕过 R16 探针接入网络所导致的任何物理损坏或数据灾难，本协议主体概不负责。
+
 ## 📡 协议标准 (Specifications)
 
 R16 编码标准以机器可读格式维护，是 SINOSHOP 生态的唯一协议源头。
@@ -86,4 +91,4 @@ R16 编码标准以机器可读格式维护，是 SINOSHOP 生态的唯一协议
 > 接口定义在此，核心实现请查阅内部开发者文档。
 ---
 *“海洋工程的规则，由此定义。”*
-*Root: Liang Zhenxiong*
+*Root: Liang Zhenxiong SINOSHOP Email:liangzhenxiong@gmail.com*
