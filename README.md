@@ -2,8 +2,11 @@
 
 # 🌊 SINOSHOP
 
-**自浮式智能海洋城市运营平台**
-*Self-sustaining Intelligent Networked Oceanic Stable Habitat Operating Platform*
+**以悬浮隧道（SFT）为核心技术**
+**构建自浮式·智能·网络化·海洋·稳定·栖息地·运营平台**
+
+*Based on SFT (Submerged Floating Tunnel),*
+*SINOSHOP: Self-sustaining Intelligent Networked Oceanic Stable Habitat Operating Platform.*
 
 ---
 
