@@ -100,8 +100,8 @@ R16-SDK 是物理世界映射至数字世界的"基因序列"。
 ### 📜 治理历史档案 (Governance History)
 - [外部架构师评审记录](docs/governance-history/external-review-2026-05-04.md) — 首次外部独立评审通过（2026-05-04）
 
-- [社区互动归档](docs/community-archive/) — 日常技术讨论与协作记录
-- 
+- [社区互动归档](docs/community-archive/) — 日常技术讨论、治理讨论与决策记录
+
 完整的贡献指南见 [CONTRIBUTING.md](CONTRIBUTING.md)，许可证见 [LICENSE](LICENSE)。
 
 ## 6. 免责与主权声明
